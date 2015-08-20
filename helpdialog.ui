@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HelpDialog</class>
+ <widget class="QDialog" name="HelpDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>645</width>
+    <height>330</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>651</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>2</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Klondike</string>
+    </attribute>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>631</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Klondike&lt;/span&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;The goal of this game is to get all cards into the foundation.&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;There are 4 piles: stock, waste, tableau, and foundation.&lt;br/&gt;Cards from the stock go into the waste in pairs of 3 (or 1 if you choose to not bet your life on RNG), &lt;br/&gt;in which the top most card must be placed into the tableau (the playing field with 7 piles) or into the &lt;br/&gt;foundation (the 4 piles at the top). The foundation must start off with an Ace, while the&lt;br/&gt;foundation must start off with a King if placed manually.&lt;br/&gt;&lt;br/&gt;Cards must be in alternating color in the tableau but must be the same color AND suit in the foundation.&lt;br/&gt;Also, cards in the tableau must be in descending order (King, Queen, Jack, Ten...),&lt;br/&gt;while the cards in the foundation must be in ascending order (Ace, Two, Three, Four...).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>Spider</string>
+    </attribute>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>631</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Spider&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;The goal of this game is to get all cards into the foundation.&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;There are 3 piles: stock, tableau, and foundation.&lt;br/&gt;Cards from the stock get dealt onto the tableau so that there are 1 new card per pile. &lt;br/&gt;Cards piles must be complete (King on bottom, Ace on top) to be played off.&lt;br/&gt;Card piles must be of the same suit to be played off.&lt;br/&gt;Cards can be dropped into any suit or color as long as the card below it is 1 number up.&lt;br/&gt;&lt;br/&gt;However, stacks of cards cannot be picked up if they are not the same suit!&lt;br/&gt;For example, you can place a Queen of Spades on a King of Hearts&lt;br/&gt;but now you cannot move the King of Hearts at all.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>FreeCell</string>
+    </attribute>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>631</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;FreeCell&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;The goal of this game is to get all cards into the foundation/homecell.&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;There are 3 piles: freecell, tableau, and foundation/homecell.&lt;br/&gt;All cards are placed in the tableau in any random order.&lt;br/&gt;Cards must go into the homecell Ace first, then ascending to King.&lt;br/&gt;Any top card can go into the freecell pile, but only one per pile.&lt;br/&gt;Cards must be alternating color and descending (Ace on top).&lt;br/&gt;&lt;br/&gt;The amount of cards that can be moved at the time is dependent on the&lt;br/&gt;empty freecell and tableau piles. (1 + freecell) * 2&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;tableau&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>About</string>
+    </attribute>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>90</y>
+       <width>471</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;http://johnbest.me&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:600; color:#30b962;text-decoration:none;&quot;&gt;johnbest.me&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;2015&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>290</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
