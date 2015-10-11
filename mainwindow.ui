@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>319</width>
-    <height>259</height>
+    <width>801</width>
+    <height>647</height>
    </rect>
   </property>
   <property name="palette">
@@ -477,13 +480,32 @@
      <string>Deal</string>
     </property>
    </widget>
+   <widget class="QLabel" name="PyramidDealLabel">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>520</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Deals Left: 2</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>319</width>
+     <width>801</width>
      <height>21</height>
     </rect>
    </property>

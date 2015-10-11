@@ -31,6 +31,7 @@ public:
     TreePile(int x, int y, int dx, int dy, Rule **Drag, Rule **Drop, QWidget *parent);
     ~TreePile();
     Card *Bottom(){return bottom;}
+    void Bottom(Card *c) { bottom = c; }
     void AddDropRules(int n ...);
     void AddDragRules(int n ...);
     bool checkDragRules(Card *c);

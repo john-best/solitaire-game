@@ -7,10 +7,11 @@
 #include "card.h"
 #include "pile.h"
 #include "windialog.h"
+#include <QMessageBox>
 extern WinDialog *winbox;
 extern Game *game;
 extern Ui::MainWindow* myui;
-Pyramid::Pyramid(QWidget *parent) : Game(parent), redrawLimit(2)
+Pyramid::Pyramid(QWidget *parent) : Game(parent), redrawLimit(2), redealLimit(2)
 {
 
 }
@@ -27,14 +28,40 @@ game_types Pyramid::Type()
 
 void Pyramid::Redeal(QWidget *w)
 {
-    if (game)
+    Pyramid* pgame = dynamic_cast<Pyramid*>(game);
+    int deals = 2;
+    if (game && pgame)
     {
+        deals = --redealLimit;
+        if (deals == -1) {
+            //TODO: clear scores
+            deals = 2;
+            QMessageBox GameOver;
+            GameOver.setText("Game over! How disappointing.");
+            GameOver.exec();
+
+        }
+    }
+    if (game) {
         game->Clear();
         delete game;
         game = NULL;
     }
     game = new Pyramid(w);
     game->newDeal();
+    redealLimit = deals;
+    myui->PyramidDealLabel->setText(QString("Deals left: " + QString::number(redealLimit)));
+}
+
+void Pyramid::RedealLimited(QWidget *w)
+{
+    if (!redealLimit)
+    {
+        myui->PyramidDealButton->hide();
+    }
+    else {
+        Redeal(parent);       
+    }
 }
 
 void Pyramid::newDeal(difficulty_type h)
@@ -89,7 +116,11 @@ void Pyramid::DealCard(Pile *p)
         if (!redrawLimit)
         {
             myui->PyramidDrawButton->hide();
-            myui->PyramidDealButton->show();
+            if (redealLimit)
+                myui->PyramidDealButton->show();
+            else {
+                //TODO: lose game
+            }
             return;
         }
         redrawLimit--;
@@ -172,10 +203,11 @@ void Pyramid::CheckWin()
 void Pyramid::Clear()
 {
     for (int i = 0; i < 52; i++)
-        delete Deck[i];
+       delete Deck[i];
     waste->NullTop();
     stock->NullTop();
     foundation->NullTop();
+    tableau->Bottom(NULL);
     TreePile *p = NULL;
     while (!piles.isEmpty())
     {

@@ -20,6 +20,7 @@ protected:
 public:
     virtual game_types Type()=0;
     virtual void newDeal(difficulty_type h = EASY)=0;
+    virtual void RedealLimited(QWidget *w){}
     virtual void DealCard(Pile *p){}
     virtual void setDealNumber(int n){}
     virtual void PlayoffTableau(TreePile *p, Card *c){}

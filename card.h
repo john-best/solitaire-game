@@ -64,6 +64,7 @@ public:
     int Value() {return value;}
     uint getMDistance(QPoint p);
 
+
     ~Card();
     friend class Pile;
     friend class TreePile;
@@ -90,8 +91,6 @@ public:
     TreeCard* RUnder(){return runder;}
     void RUnder(TreeCard *tc){runder = tc;}
     void mouseReleaseEvent(QMouseEvent *event);
-
-
 
 
     friend class TreePile;

@@ -14,10 +14,13 @@ class Pyramid : public Game
     Pile *stock;
     Pile *foundation;
     int redrawLimit;
+    int redealLimit;
     TreeCard* Deck[52];
+
 public:
     game_types Type();
     void Redeal(QWidget *w);
+    void RedealLimited(QWidget *w);
     void newDeal(difficulty_type h);
     void DealCard(Pile *p);
     bool FindBestCard(TreeCard *c);

@@ -28,6 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
     qsrand(time.msecsSinceStartOfDay());
     ui->PyramidDealButton->hide();
     ui->PyramidDrawButton->hide();
+    ui->PyramidDealLabel->hide();
+
 
 }
 
@@ -79,6 +81,7 @@ void MainWindow::newPyramid()
     }
     ui->PyramidDealButton->hide();
     ui->PyramidDrawButton->show();
+    ui->PyramidDealLabel->show();
     game = new Pyramid(ui->centralWidget);
     game->newDeal();
 }
@@ -190,4 +193,10 @@ void MainWindow::on_actionPyramid_triggered()
     ui->actionPlayoff_Cards->setEnabled(true);
     ui->actionRedeal->setEnabled(true);
     setWindowTitle("Pyramid");
+}
+
+void MainWindow::on_PyramidDealButton_clicked()
+{
+    Pyramid *temp = dynamic_cast<Pyramid*>(game);
+    if (temp) temp->RedealLimited(NULL);
 }

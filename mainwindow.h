@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <game.h>
+#include <QLabel>
 
 namespace Ui {
 class MainWindow;
@@ -46,6 +47,8 @@ private slots:
     void on_PyramidDrawButton_clicked();
 
     void on_actionPyramid_triggered();
+
+    void on_PyramidDealButton_clicked();
 
 public slots:
     void on_actionRedeal_triggered();
